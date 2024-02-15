@@ -15,7 +15,7 @@
 
 .App-header {
     width: 100%;
-    background-color: #282c34;
+    background-color: #fe7e03;
     min-height: 40vh;
     display: flex;
     flex-direction: column;
@@ -36,4 +36,39 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+.App-List {
+    color: whitesmoke;
+    font-style: italic;
+}
+
+.App-Table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 50%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #dd4242;
+    border-radius: 16px;
+}
+
+.Table-Col1 {
+    width: 50%;
+    height: 100%;
+    background-color: #bc221d;
+    padding-bottom: 4%;
+}
+
+.Table-Col2 {
+    width: 50%;
+    height: 150%;
+    background-color: #e46b5d;
+    padding-bottom: 6%;
+}
+
+#goose-pic {
+    padding-top: 10px;
+    width: 60%;
 }
