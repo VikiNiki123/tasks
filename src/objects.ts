@@ -101,10 +101,8 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-    return {
-        ...question,
-        name: newName
-    };
+    const newQuestion = { ...question, name: newName };
+    return newQuestion;
 }
 
 /**
@@ -113,10 +111,8 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-    return {
-        ...question,
-        published: !question.published
-    };
+    const newVersionQuestion = { ...question, published: !question.published };
+    return newVersionQuestion;
 }
 
 /**
@@ -127,12 +123,13 @@ export function publishQuestion(question: Question): Question {
  */
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
     const newName = `Copy of ${oldQuestion.name}`;
-    return {
+    const newQuestion = {
         ...oldQuestion,
         id: id,
         name: newName,
         published: false
     };
+    return newQuestion;
 }
 
 /**
@@ -144,10 +141,8 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  */
 export function addOption(question: Question, newOption: string): Question {
     const updatedOptions = [...question.options, newOption];
-    return {
-        ...question,
-        options: updatedOptions
-    };
+    const newQuestion = { ...question, options: updatedOptions };
+    return newQuestion;
 }
 
 /**
@@ -164,7 +159,7 @@ export function mergeQuestion(
     contentQuestion: Question,
     { points }: { points: number }
 ): Question {
-    return {
+    const newQuestion = {
         id: id,
         name: name,
         body: contentQuestion.body,
@@ -174,4 +169,5 @@ export function mergeQuestion(
         points: points,
         published: false
     };
+    return newQuestion;
 }
