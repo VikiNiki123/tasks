@@ -15,26 +15,657 @@ PASS src/objects.test.ts
 PASS src/arrays.test.ts
 PASS src/nested.test.ts
 PASS src/functions.test.ts
-PASS src/text.test.tsx
-PASS src/HtmlCss.test.tsx
-PASS src/App.test.tsx
-----------------|---------|----------|---------|---------|-------------------
-File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-----------------|---------|----------|---------|---------|-------------------
-All files       |   99.46 |    98.46 |     100 |   99.43 |                   
- src            |   99.46 |    98.46 |     100 |   99.43 |                   
-  App.tsx       |     100 |      100 |     100 |     100 |                   
-  arrays.ts     |     100 |      100 |     100 |     100 |                   
-  functions.ts  |     100 |      100 |     100 |     100 |                   
-  nested.ts     |     100 |      100 |     100 |     100 |                   
-  objects.ts    |   97.14 |     87.5 |     100 |   97.14 | 53                
- src/interfaces |       0 |        0 |       0 |       0 |                   
-  answer.ts     |       0 |        0 |       0 |       0 |                   
-  question.ts   |       0 |        0 |       0 |       0 |                   
-----------------|---------|----------|---------|---------|-------------------
+PASS src/components/StartAttempt.test.tsx
+PASS src/components/ChangeType.test.tsx
+FAIL src/components/TwoDice.test.tsx
+  ● TwoDice Component tests › There is a `left-die` and `right-die` testid
 
-Test Suites: 7 passed, 7 total
-Tests:       49 passed, 49 total
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"left-dice"[39m
+          [36m>[39m
+            [0m1[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Left[0m
+          [36m</button>[39m
+          [36m<br />[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"right-dice"[39m
+          [36m>[39m
+            [0m2[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Right[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      24 |     });
+      25 |     test("There is a `left-die` and `right-die` testid", () => {
+    > 26 |         const leftDie = screen.getByTestId("left-die");
+         |                                ^
+      27 |         const rightDie = screen.getByTestId("right-die");
+      28 |         expect(leftDie).toBeInTheDocument();
+      29 |         expect(rightDie).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:26:32)
+
+  ● TwoDice Component tests › The `left-die` and `right-die` are two different numbers
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"left-dice"[39m
+          [36m>[39m
+            [0m1[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Left[0m
+          [36m</button>[39m
+          [36m<br />[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"right-dice"[39m
+          [36m>[39m
+            [0m2[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Right[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      30 |     });
+      31 |     test("The `left-die` and `right-die` are two different numbers", () => {
+    > 32 |         const leftDie = screen.getByTestId("left-die");
+         |                                ^
+      33 |         const rightDie = screen.getByTestId("right-die");
+      34 |         const leftNumber = extractDigits(leftDie);
+      35 |         const rightNumber = extractDigits(rightDie);
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:32:32)
+
+  ● TwoDice Component tests › Clicking left button changes first number
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"left-dice"[39m
+          [36m>[39m
+            [0m5[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Left[0m
+          [36m</button>[39m
+          [36m<br />[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"right-dice"[39m
+          [36m>[39m
+            [0m2[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Right[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      54 |         expect(mathRandomFunction).toBeCalledTimes(3);
+      55 |         // And the number to be 5
+    > 56 |         const leftNumber = extractDigits(screen.getByTestId("left-die"));
+         |                                                 ^
+      57 |         expect(leftNumber).toEqual(5);
+      58 |     });
+      59 |     // Clicking right button changes second number
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:56:49)
+
+  ● TwoDice Component tests › Clicking right button changes second number
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="right-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"left-dice"[39m
+          [36m>[39m
+            [0m1[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Left[0m
+          [36m</button>[39m
+          [36m<br />[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"right-dice"[39m
+          [36m>[39m
+            [0m5[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Right[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      66 |         expect(mathRandomFunction).toBeCalledTimes(3);
+      67 |         // And the number to be 5
+    > 68 |         const rightNumber = extractDigits(screen.getByTestId("right-die"));
+         |                                                  ^
+      69 |         expect(rightNumber).toEqual(5);
+      70 |     });
+      71 |     // Rolling two different numbers does not win or lose the game
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:68:50)
+
+  ● TwoDice Component tests › Rolling two different numbers does not win or lose the game
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"left-dice"[39m
+          [36m>[39m
+            [0m1[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Left[0m
+          [36m</button>[39m
+          [36m<br />[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"right-dice"[39m
+          [36m>[39m
+            [0m2[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Right[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      74 |         const leftButton = screen.getByRole("button", { name: /Roll Left/i });
+      75 |         const rightButton = screen.getByRole("button", { name: /Roll Right/i });
+    > 76 |         const leftDie = screen.getByTestId("left-die");
+         |                                ^
+      77 |         const rightDie = screen.getByTestId("right-die");
+      78 |         // When the left and right buttons are rolled once each
+      79 |         leftButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:76:32)
+
+  ● TwoDice Component tests › Getting snake eyes loses the game
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"left-dice"[39m
+          [36m>[39m
+            [0m1[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Left[0m
+          [36m</button>[39m
+          [36m<br />[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"right-dice"[39m
+          [36m>[39m
+            [0m2[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Right[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       95 |         const leftButton = screen.getByRole("button", { name: /Roll Left/i });
+       96 |         const rightButton = screen.getByRole("button", { name: /Roll Right/i });
+    >  97 |         const leftDie = screen.getByTestId("left-die");
+          |                                ^
+       98 |         const rightDie = screen.getByTestId("right-die");
+       99 |         // When the left and right buttons are rolled once each
+      100 |         leftButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:97:32)
+
+  ● TwoDice Component tests › Getting matching numbers wins the game
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"left-dice"[39m
+          [36m>[39m
+            [0m1[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Left[0m
+          [36m</button>[39m
+          [36m<br />[39m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"right-dice"[39m
+          [36m>[39m
+            [0m2[0m
+          [36m</span>[39m
+          [36m<br />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Right[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      119 |         const leftButton = screen.getByRole("button", { name: /Roll Left/i });
+      120 |         const rightButton = screen.getByRole("button", { name: /Roll Right/i });
+    > 121 |         const leftDie = screen.getByTestId("left-die");
+          |                                ^
+      122 |         const rightDie = screen.getByTestId("right-die");
+      123 |         // When the left and right buttons are rolled once each
+      124 |         leftButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:121:32)
+
+PASS src/components/CycleHoliday.test.tsx
+  ● Console
+
+    console.log
+      🎃
+
+      at onClick (src/components/CycleHoliday.tsx:36:29)
+
+    console.log
+      New Holiday:  🎃
+
+      at onClick (src/components/CycleHoliday.tsx:38:29)
+
+    console.log
+      🥚
+
+      at onClick (src/components/CycleHoliday.tsx:36:29)
+
+    console.log
+      New Holiday:  🥚
+
+      at onClick (src/components/CycleHoliday.tsx:38:29)
+
+    console.log
+      😈
+
+      at onClick (src/components/CycleHoliday.tsx:36:29)
+
+    console.log
+      New Holiday:  😈
+
+      at onClick (src/components/CycleHoliday.tsx:38:29)
+
+    console.log
+      🎄
+
+      at onClick (src/components/CycleHoliday.tsx:36:29)
+
+    console.log
+      New Holiday:  🎄
+
+      at onClick (src/components/CycleHoliday.tsx:38:29)
+
+    console.log
+      🐇
+
+      at onClick (src/components/CycleHoliday.tsx:36:29)
+
+    console.log
+      New Holiday:  🐇
+
+      at onClick (src/components/CycleHoliday.tsx:38:29)
+
+    console.log
+      🎃
+
+      at onClick (src/components/CycleHoliday.tsx:36:29)
+
+    console.log
+      New Holiday:  🎃
+
+      at onClick (src/components/CycleHoliday.tsx:38:29)
+
+    console.log
+      🎃
+
+      at onClick (src/components/CycleHoliday.tsx:47:29)
+
+    console.log
+      New Holiday:  🎃
+
+      at onClick (src/components/CycleHoliday.tsx:49:29)
+
+    console.log
+      🎄
+
+      at onClick (src/components/CycleHoliday.tsx:47:29)
+
+    console.log
+      New Holiday:  🎄
+
+      at onClick (src/components/CycleHoliday.tsx:49:29)
+
+    console.log
+      😈
+
+      at onClick (src/components/CycleHoliday.tsx:47:29)
+
+    console.log
+      New Holiday:  😈
+
+      at onClick (src/components/CycleHoliday.tsx:49:29)
+
+    console.log
+      🐇
+
+      at onClick (src/components/CycleHoliday.tsx:47:29)
+
+    console.log
+      New Holiday:  🐇
+
+      at onClick (src/components/CycleHoliday.tsx:49:29)
+
+    console.log
+      🥚
+
+      at onClick (src/components/CycleHoliday.tsx:47:29)
+
+    console.log
+      New Holiday:  🥚
+
+      at onClick (src/components/CycleHoliday.tsx:49:29)
+
+    console.log
+      🎃
+
+      at onClick (src/components/CycleHoliday.tsx:47:29)
+
+    console.log
+      New Holiday:  🎃
+
+      at onClick (src/components/CycleHoliday.tsx:49:29)
+
+FAIL src/components/Counter.test.tsx
+  ● Counter Component tests › There is a button named Add One
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Add One/i`
+
+    Here are the accessible roles:
+
+      button:
+
+      Name "Adding One":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<span>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mAdding One[0m
+          [36m</button>[39m
+          [36m<br />[39m
+          [0mequals to: [0m
+          [0m0[0m
+        [36m</span>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      19 |
+      20 |     test("There is a button named Add One", () => {
+    > 21 |         const addOneButton = screen.getByRole("button", { name: /Add One/i });
+         |                                     ^
+      22 |         expect(addOneButton).toBeInTheDocument();
+      23 |     });
+      24 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/Counter.test.tsx:21:37)
+
+  ● Counter Component tests › Clicking the button once adds one
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Add One/i`
+
+    Here are the accessible roles:
+
+      button:
+
+      Name "Adding One":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<span>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mAdding One[0m
+          [36m</button>[39m
+          [36m<br />[39m
+          [0mequals to: [0m
+          [0m0[0m
+        [36m</span>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      24 |
+      25 |     test("Clicking the button once adds one", () => {
+    > 26 |         const addOneButton = screen.getByRole("button", { name: /Add One/i });
+         |                                     ^
+      27 |         addOneButton.click();
+      28 |         const valueText = screen.getByText(/1/i);
+      29 |         expect(valueText).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/Counter.test.tsx:26:37)
+
+  ● Counter Component tests › Clicking the button twice adds two
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Add One/i`
+
+    Here are the accessible roles:
+
+      button:
+
+      Name "Adding One":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<span>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mAdding One[0m
+          [36m</button>[39m
+          [36m<br />[39m
+          [0mequals to: [0m
+          [0m0[0m
+        [36m</span>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      31 |
+      32 |     test("Clicking the button twice adds two", () => {
+    > 33 |         const addOneButton = screen.getByRole("button", { name: /Add One/i });
+         |                                     ^
+      34 |         addOneButton.click();
+      35 |         addOneButton.click();
+      36 |         const valueText = screen.getByText(/2/i);
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/Counter.test.tsx:33:37)
+
+PASS src/components/RevealAnswer.test.tsx
+PASS src/App.test.tsx
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   98.75 |    93.81 |   97.72 |   98.69 |                   
+ src               |   98.93 |    98.46 |   98.55 |   98.86 |                   
+  App.tsx          |      50 |      100 |      50 |      50 | 74                
+  arrays.ts        |     100 |      100 |     100 |     100 |                   
+  functions.ts     |     100 |      100 |     100 |     100 |                   
+  nested.ts        |     100 |      100 |     100 |     100 |                   
+  objects.ts       |   97.14 |     87.5 |     100 |   97.14 | 53                
+ src/components    |   98.14 |    84.37 |   94.73 |   98.14 |                   
+  ChangeType.tsx   |     100 |      100 |     100 |     100 |                   
+  Counter.tsx      |   66.66 |      100 |      50 |   66.66 | 8                 
+  CycleHoliday.tsx |     100 |    91.66 |     100 |     100 | 27                
+  RevealAnswer.tsx |     100 |      100 |     100 |     100 |                   
+  StartAttempt.tsx |     100 |       70 |     100 |     100 | 12,23-33          
+  TwoDice.tsx      |     100 |    83.33 |     100 |     100 | 39                
+ src/interfaces    |       0 |        0 |       0 |       0 |                   
+  answer.ts        |       0 |        0 |       0 |       0 |                   
+  question.ts      |       0 |        0 |       0 |       0 |                   
+-------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 2 failed, 9 passed, 11 total
+Tests:       10 failed, 83 passed, 93 total
 Snapshots:   0 total
-Time:        4.036 s
+Time:        5.316 s
 Ran all test suites.
