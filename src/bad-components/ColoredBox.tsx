@@ -27,7 +27,8 @@ function ColorPreview({ colorIndex }: color): JSX.Element {
                 backgroundColor: COLORS[colorIndex],
                 display: "inline-block",
                 verticalAlign: "bottom",
-                marginLeft: "5px"
+                marginLeft: "10px",
+                marginTop: "5px"
             }}
         ></div>
     );
