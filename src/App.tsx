@@ -59,7 +59,9 @@ function App(): JSX.Element {
             ========
             <div>
                 <hr></hr>
-                {/* <DoubleHalf></DoubleHalf> */}
+                <h3>↓ Task 9 Content ↓</h3>
+                <br></br>
+                {<DoubleHalf></DoubleHalf>}
                 <hr></hr>
                 <ChooseTeam></ChooseTeam>
                 <hr></hr>
@@ -67,6 +69,8 @@ function App(): JSX.Element {
                 <hr></hr>
                 <ShoveBox></ShoveBox>
                 <hr></hr>
+                <h3>↓ Task 8 Content ↓</h3>
+                <br></br>
                 <Counter></Counter>
                 <hr />
                 <RevealAnswer></RevealAnswer>
