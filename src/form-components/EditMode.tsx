@@ -26,7 +26,7 @@ export function EditMode(): JSX.Element {
                 label="Edit"
                 checked={editMode}
                 onChange={updateEditMode}
-                style={{ marginRight: "50%", marginLeft: "50%" }}
+                style={{ marginRight: "50%", marginLeft: "48%" }}
             />
             {editMode && (
                 <div>
@@ -49,7 +49,7 @@ export function EditMode(): JSX.Element {
                         label="Student"
                         checked={isStudent}
                         onChange={updateIsStudent}
-                        style={{ marginRight: "40%", marginLeft: "50%" }}
+                        style={{ marginRight: "50%", marginLeft: "48%" }}
                     />
                 </div>
             )}
