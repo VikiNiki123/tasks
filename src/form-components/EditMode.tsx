@@ -26,13 +26,22 @@ export function EditMode(): JSX.Element {
                 label="Edit"
                 checked={editMode}
                 onChange={updateEditMode}
-                style={{ marginRight: "40%", marginLeft: "50%" }}
+                style={{ marginRight: "50%", marginLeft: "50%" }}
             />
             {editMode && (
                 <div>
                     <Form.Group controlId="formName">
-                        <Form.Label>Name:</Form.Label>
-                        <Form.Control value={name} onChange={updateName} />
+                        <Form.Label>Add the name you want:</Form.Label>
+                        <Form.Control
+                            value={name}
+                            onChange={updateName}
+                            style={{
+                                width: 700,
+                                marginLeft: "30%",
+                                marginTop: 5,
+                                paddingTop: 25
+                            }}
+                        />
                     </Form.Group>
                     <Form.Check
                         type="checkbox"
